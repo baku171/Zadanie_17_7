@@ -41,15 +41,11 @@ app.get('/logged', function(req, res) {
     res.render('logged', { user: googleProfile });
 });
 
-app.get('/logout', function(req, res) {
-    req.logOut();
-    delete req.session;
-    res.redirect('/');
-
-    // req.session.destroy(function(err) {
-    //     res.redirect('/');
-    // });
-});
+// app.get('/logout', function(req, res) {
+//     req.logOut();
+//     delete req.session;
+//     res.redirect('/');
+// });
 
 //Passport routes
 app.get('/auth/google',
