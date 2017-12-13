@@ -13,17 +13,17 @@ passport.deserializeUser(function(obj, done) {
 });
 
 passport.use(new GoogleStrategy({
-    clientID: config.GOOGLE_CLIENT_ID,
-    clientSecret:config.GOOGLE_CLIENT_SECRET,
-    callbackURL: config.CALLBACK_URL
-},
-function(accessToken, refreshToken, profile, cb) {
-    googleProfile = {
-        id: profile.id,
-        displayName: profile.displayName
-    };
-    cb(null, profile);
-}
+        clientID: config.GOOGLE_CLIENT_ID,
+        clientSecret:config.GOOGLE_CLIENT_SECRET,
+        callbackURL: config.CALLBACK_URL
+    },
+    function(accessToken, refreshToken, profile, cb) {
+        googleProfile = {
+            id: profile.id,
+            displayName: profile.displayName
+        };
+        cb(null, profile);
+    }
 ));
 
 app.set('view engine', 'pug');
